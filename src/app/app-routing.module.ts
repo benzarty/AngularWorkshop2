@@ -5,14 +5,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: AppComponent },
-  { path: 'invoicemanagement', component: MainInvoiceComponent },
+  {
+    path: 'MainInvoiceComponent',
+    component: MainInvoiceComponent,
+    children: [{ path: 'detail/:Id/:Active', component: InvoiceComponent }],
+    // [{ path: 'listuser/:cat/:test', component: ListUserComponent }],
+  },{
+    path: 'goback',
+    component: MainInvoiceComponent}
 
 ];
+//test
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

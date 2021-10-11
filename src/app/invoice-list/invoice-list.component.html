@@ -1,1 +1,9 @@
-<p>invoice-list works!</p>
+<div *ngFor="let u of list; let i = index; let f=first">
+    <ul>
+<li> Facture  <a  [routerLink]="['/MainInvoiceComponent/detail',u.idFacture,u.active]"> Detail,</a>
+    
+</li>
+</ul>
+    </div>
+
+    <router-outlet></router-outlet>

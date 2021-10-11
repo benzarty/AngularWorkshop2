@@ -1,1 +1,14 @@
 <p>invoice works!</p>
+
+
+<p *ngIf="Active === 'true';else notShow">
+{{ Id }}  {{Active }} </p>
+
+<ng-template #notShow>
+    <p>
+        Impossible de visualiser les détails 
+        de la facture
+    </p>
+  </ng-template>
+
+<button routerLink='/goback'>Retour </button>
