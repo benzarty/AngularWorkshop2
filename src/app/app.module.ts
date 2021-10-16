@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainInvoiceComponent } from './main-invoice/main-invoice.component';
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { AddProductTDComponent } from './add-product-td/add-product-td.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
     MainInvoiceComponent,
     InvoiceListComponent,
     InvoiceComponent,
+    AddProductTDComponent,
     ],
   imports: [
     FormsModule,

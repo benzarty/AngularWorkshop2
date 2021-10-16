@@ -1,3 +1,4 @@
+import { AddProductTDComponent } from './add-product-td/add-product-td.component';
 import { MainInvoiceComponent } from './main-invoice/main-invoice.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { AppComponent } from './app.component';
@@ -10,10 +11,15 @@ const routes: Routes = [
     component: MainInvoiceComponent,
     children: [{ path: 'detail/:Id/:Active', component: InvoiceComponent }],
     // [{ path: 'listuser/:cat/:test', component: ListUserComponent }],
-  },{
+  },
+  {
     path: 'goback',
-    component: MainInvoiceComponent}
-
+    component: MainInvoiceComponent,
+  },
+  {
+    path: 'Gotodo2',
+    component: AddProductTDComponent,
+  },
 ];
 //test
 //test
