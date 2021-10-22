@@ -1,5 +1,6 @@
-<form ngForm #form="ngForm">
-    <div ngForm #formgeneral="ngForm" class="form-group">
+<form  #form="ngForm">
+    <!-- form auto ajouti ngform donc na7iwouha -->
+    <div ngForm #formBig="ngForm" class="form-group">
         <label>Id Produit</label>
         <input class="form-control" name="idproduit" type="text" required ngModel #idproduit="ngModel" />
         <div *ngIf="idproduit.errors?.required">champ obligatoire</div>
@@ -27,12 +28,12 @@
         <div *ngIf="prisunitaire.errors?.pattern">
             not following certain pattern
         </div>
-        <button [hidden]="formgeneral.valid" [disabled]="formgeneral.invalid" type="submit" class="btn btn-primary">
+        <button [hidden]="formBig.valid" [disabled]="formBig.invalid" type="submit" class="btn btn-primary">
             Suivant
         </button>
     </div>
 
-    <div [hidden]="formgeneral.invalid" ngForm #formdetails="ngForm">
+    <div [hidden]="formBig.invalid" ngForm #formdetails="ngForm">
         <label>Id détails produit</label>
         <input class="form-control" name="iddetail" type="text" required ngModel #iddetail="ngModel" />
         <div *ngIf="iddetail.errors?.required">champ obligatoire</div>
