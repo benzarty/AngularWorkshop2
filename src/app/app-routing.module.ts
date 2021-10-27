@@ -1,3 +1,4 @@
+import { AddProductRFComponent } from './add-product-rf/add-product-rf.component';
 import { AddProductTDComponent } from './add-product-td/add-product-td.component';
 import { MainInvoiceComponent } from './main-invoice/main-invoice.component';
 import { InvoiceComponent } from './invoice/invoice.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
     path: 'Gotodo2',
     component: AddProductTDComponent,
   },
+  {
+    path: 'Gotodo3',
+    component: AddProductRFComponent,
+  }
 ];
 //test
 //test

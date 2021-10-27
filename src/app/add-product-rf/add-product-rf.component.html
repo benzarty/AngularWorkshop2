@@ -1,0 +1,43 @@
+<div class="container"> 
+<form [formGroup]="myFormGeneral"> 
+
+    <!-- form auto ajouti ngform donc na7iwouha -->
+    <div formGroupName="form1">
+        <label>Id Produit</label>
+        <input class="form-control" formControlName="idproduit" type="text" required />
+
+        <label>Code</label>
+        <input class="form-control" formControlName="code" type="text" />
+       
+        <label>Libelle</label>
+        <input class="form-control" formControlName="libelle" type="text" />
+      
+
+        <label>Prix unitaire</label>
+        <input class="form-control" formControlName="prixunitaire" type="text"/>
+       
+        <button  type="submit" class="btn btn-primary">
+            Suivant
+        </button>
+    </div>
+
+    <div formGroupName="form2" [hidden]=form2.invalid >
+        <label>Id détails produit</label>
+        <input class="form-control" formControlName="iddetailproduit" type="text" />
+        
+        <label>Date création</label>
+        <input class="form-control" formControlName="datecreation" type="date"  />
+        <label >Date dernière modification</label>
+        <input class="form-control" formControlName="datedernieremodification" type="date" />
+        <br />
+        <label>Catégorie</label>
+        <select class="form-control" formControlName="categorieproduit">
+            <option value="electromenager,">Electromenager,</option>
+            <option value="alimentaire">Alimentaire</option>
+            <option value="quincaillerie">Hamster</option>
+        </select>
+    </div>
+
+    <button  class="btn btn-primary">Ajouter</button>
+</form>
+</div>  

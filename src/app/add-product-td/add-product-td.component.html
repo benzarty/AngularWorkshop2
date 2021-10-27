@@ -1,4 +1,4 @@
-<form  #form="ngForm">
+<form   #form="ngForm">
     <!-- form auto ajouti ngform donc na7iwouha -->
     <div ngForm #formBig="ngForm" class="form-group">
         <label>Id Produit</label>
@@ -50,5 +50,5 @@
         </select>
     </div>
 
-    <button [hidden]="formdetails.invalid" class="form-control">Ajouter</button>
+    <button *ngIf="formBig.valid && formdetails.valid" class="form-control">Ajouter</button>
 </form>
