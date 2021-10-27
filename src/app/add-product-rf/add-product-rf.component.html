@@ -1,43 +1,77 @@
-<div class="container"> 
-<form [formGroup]="myFormGeneral"> 
 
-    <!-- form auto ajouti ngform donc na7iwouha -->
-    <div formGroupName="form1">
-        <label>Id Produit</label>
-        <input class="form-control" formControlName="idproduit" type="text" required />
+<div class="container">
+    <form [formGroup]="formGeneral" (submit)="addProduct()">
 
-        <label>Code</label>
-        <input class="form-control" formControlName="code" type="text" />
-       
-        <label>Libelle</label>
-        <input class="form-control" formControlName="libelle" type="text" />
+        <div class="form-group">
+            <label>Id Produit</label>
+            <input type="text" class="form-control" formControlName="idproduit">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="IdProduit.invalid && IdProduit.touched">
+            Vérifiez l'id
+        </div>
+        <div class="form-group">
+            <label>Code</label>
+            <input type="text" class="form-control" formControlName="code">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="myCode.invalid && myCode.touched">
+            Vérifiez code
+        </div>
+        <div class="form-group">
+            <label>Libelle</label>
+            <input type="text" class="form-control" formControlName="libelle">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="Libelle.invalid && Libelle.touched">
+            Vérifiez Libelle
+        </div>
+        <div class="form-group">
+            <label>Prix unitaire</label>
+            <input type="text" class="form-control" formControlName="prixunitaire">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="PrixUnitaire.invalid && PrixUnitaire.touched">
+            Vérifiez  code
+        </div>
+    
       
-
-        <label>Prix unitaire</label>
-        <input class="form-control" formControlName="prixunitaire" type="text"/>
-       
-        <button  type="submit" class="btn btn-primary">
-            Suivant
-        </button>
-    </div>
-
-    <div formGroupName="form2" [hidden]=form2.invalid >
-        <label>Id détails produit</label>
-        <input class="form-control" formControlName="iddetailproduit" type="text" />
+        <div formGroupName="detailsForm">
+            <div class="form-group">
+                <label>Id details produit</label>
+                <input type="text" class="form-control" formControlName="iddetailproduit">
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="IdDetailProduit.invalid && IdDetailProduit.touched ">
+                Vérifiez le code
+            </div>
+            <div class="form-group">
+                <label>Date création</label>
+                <input type="date" class="form-control" formControlName="datecreation">
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="DateCreation.invalid && DateCreation.touched">
+                Vérifiez le code
+            </div>
+            <div class="form-group">
+                <label>Date dernière modification</label>
+                <input type="date" class="form-control" formControlName="datedernieremodification">
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="DateDerniereModification.invalid && DateDerniereModification.touched">
+                Vérifiez le code
+            </div>
+            <p>Categorie produit</p>
+            <select formControlName="categorie" class="form-control">
+                <option value="electromenager,">Electromenager</option>
+                <option value="alimentaire">Alimentaire</option>
+                <option value="quincaillerie">Hamster</option>
+            </select>
+            <div class="alert alert-danger" role="alert" *ngIf="Categorie.invalid && Categorie.touched ">
+                Vérifiez le code
+            </div>
         
-        <label>Date création</label>
-        <input class="form-control" formControlName="datecreation" type="date"  />
-        <label >Date dernière modification</label>
-        <input class="form-control" formControlName="datedernieremodification" type="date" />
-        <br />
-        <label>Catégorie</label>
-        <select class="form-control" formControlName="categorieproduit">
-            <option value="electromenager,">Electromenager,</option>
-            <option value="alimentaire">Alimentaire</option>
-            <option value="quincaillerie">Hamster</option>
-        </select>
-    </div>
-
-    <button  class="btn btn-primary">Ajouter</button>
-</form>
-</div>  
+    
+        </div>
+        
+    
+        
+    
+        
+        <input *ngIf="formGeneral.valid" type="submit" class="btn btn-primary" value="Add Product" >
+            
+    </form>
+      </div>
