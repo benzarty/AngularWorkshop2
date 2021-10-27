@@ -10,18 +10,21 @@ import { product } from '../models/product';
 })
 export class AddProductRFComponent implements OnInit {
   formGeneral : FormGroup;
-  detailsForm: FormGroup;
+  form2: FormGroup;
   Products: Array<product>;
   ajout: product;
   constructor() { }
 
   ngOnInit(): void {
+    this.ajout= new product();
+    this.Products= [];
+
     this.formGeneral= new FormGroup({
       idproduit: new FormControl("",[Validators.required]),
       code: new FormControl("",[Validators.required,Validators.pattern("[a-zA-Z-0-9]{8,}")]),
       libelle: new FormControl("",[Validators.required,Validators.minLength(3)]),
       prixunitaire: new FormControl("",[Validators.required,Validators.pattern("[1-9][0-9]*")]),
-      detailsForm: new FormGroup({
+      form2: new FormGroup({
         iddetailproduit: new FormControl("",Validators.required),
         datecreation: new FormControl("",Validators.required),
         datedernieremodification: new FormControl("",Validators.required),
@@ -29,14 +32,13 @@ export class AddProductRFComponent implements OnInit {
 
       })
     });
-    this.ajout= new product();
-    this.Products= [];
+  
   }
 
   get IdProduit() {
     return this.formGeneral.get('idproduit');
   }
-  get myCode() {
+  get Code() {
     return this.formGeneral.get('code');
   }
 
@@ -49,22 +51,22 @@ export class AddProductRFComponent implements OnInit {
   }
 
   get IdDetailProduit() {
-    return this.formGeneral.get('detailsForm.iddetailproduit');
+    return this.formGeneral.get('form2.iddetailproduit');
   }
 
   get DateCreation() {
-    return this.formGeneral.get('detailsForm.datecreation');
+    return this.formGeneral.get('form2.datecreation');
   }
   get DateDerniereModification () {
-    return this.formGeneral.get('detailsForm.datedernieremodification');
+    return this.formGeneral.get('form2.datedernieremodification');
   }
    get Categorie() {
-    return this.formGeneral.get('detailsForm.categorie');
+    return this.formGeneral.get('form2.categorie');
 
    }
 
-  addProduct() {
-        this.ajout.code= this.myCode.value;
+   ajoutprod() {
+        this.ajout.code= this.Code.value;
     this.ajout.categorie= this.Categorie.value;
     this.ajout.dateCreation= this.DateCreation.value;
     this.ajout.idProduit= this.IdProduit.value;
@@ -75,7 +77,6 @@ export class AddProductRFComponent implements OnInit {
     this.Products.push(this.ajout);
     console.log(JSON.stringify(this.Products));
 
-    this.formGeneral.reset();
   }
 
 }

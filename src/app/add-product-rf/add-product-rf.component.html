@@ -1,6 +1,6 @@
 
 <div class="container">
-    <form [formGroup]="formGeneral" (submit)="addProduct()">
+    <form [formGroup]="formGeneral" (submit)="ajoutprod()">
 
         <div class="form-group">
             <label>Id Produit</label>
@@ -13,7 +13,7 @@
             <label>Code</label>
             <input type="text" class="form-control" formControlName="code">
         </div>
-        <div class="alert alert-danger" role="alert" *ngIf="myCode.invalid && myCode.touched">
+        <div class="alert alert-danger" role="alert" *ngIf="Code.invalid && Code.touched">
             Vérifiez code
         </div>
         <div class="form-group">
@@ -32,7 +32,7 @@
         </div>
     
       
-        <div formGroupName="detailsForm">
+        <div formGroupName="form2">
             <div class="form-group">
                 <label>Id details produit</label>
                 <input type="text" class="form-control" formControlName="iddetailproduit">
@@ -61,7 +61,7 @@
                 <option value="quincaillerie">Hamster</option>
             </select>
             <div class="alert alert-danger" role="alert" *ngIf="Categorie.invalid && Categorie.touched ">
-                Vérifiez le code
+                Vérifiez code
             </div>
         
     
