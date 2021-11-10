@@ -8,6 +8,10 @@ import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { AddProductTDComponent } from './add-product-td/add-product-td.component';
 import { AddProductRFComponent } from './add-product-rf/add-product-rf.component';
+import { AddFormParentComponent } from './add-form-parent/add-form-parent.component';
+import { ErrorComponent } from './error/error.component';
+import { ConvertisseurComponent } from './convertisseur/convertisseur.component';
+import { ToEuroConvertComponent } from './to-euro-convert/to-euro-convert.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { AddProductRFComponent } from './add-product-rf/add-product-rf.component
     InvoiceComponent,
     AddProductTDComponent,
     AddProductRFComponent,
+    AddFormParentComponent,
+    ErrorComponent,
+    ConvertisseurComponent,
+    ToEuroConvertComponent,
     ],
   imports: [
     FormsModule,

@@ -1,3 +1,5 @@
+import { ConvertisseurComponent } from './convertisseur/convertisseur.component';
+import { AddFormParentComponent } from './add-form-parent/add-form-parent.component';
 import { AddProductRFComponent } from './add-product-rf/add-product-rf.component';
 import { AddProductTDComponent } from './add-product-td/add-product-td.component';
 import { MainInvoiceComponent } from './main-invoice/main-invoice.component';
@@ -24,6 +26,14 @@ const routes: Routes = [
   {
     path: 'Gotodo3',
     component: AddProductRFComponent,
+  },
+  {
+    path: 'GtoToDo4',
+    component: AddFormParentComponent,
+  },
+  {
+    path: 'GtoToDo5',
+    component: ConvertisseurComponent,
   }
 ];
 //test
