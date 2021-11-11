@@ -17,10 +17,10 @@ export class AddFormParentComponent implements OnInit {
 
   ngOnInit(): void {
 
-  
+ 
  this.formGeneral = new FormGroup({
-      firstName: new FormControl("",[Validators.required,Validators.pattern("[a-zA-Z]*"),Validators.minLength(3),Validators.minLength(3)]),
-      lastName: new FormControl("",[Validators.required,Validators.pattern("[a-zA-Z]*"),Validators.minLength(3),Validators.minLength(3)]),
+      firstName: new FormControl("",[Validators.required,Validators.pattern("[a-zA-Z]*"),Validators.minLength(3)]),
+      lastName: new FormControl("",[Validators.required,Validators.pattern("[a-zA-Z]*"),Validators.minLength(3)]),
       birthDate: new FormControl("",[Validators.required]),
       email: new FormControl("",[Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+@gmail.com")]),
       password: new FormControl("",[Validators.required,Validators.minLength(8),Validators.pattern("^[a-zA-Z0-9]{8,}?")]),
@@ -30,6 +30,25 @@ export class AddFormParentComponent implements OnInit {
 
       
     });
+
+  /*  this.formGeneral = this._formBuilder.group({
+      firstName: ['', Validators.required,Validators.pattern("[a-zA-Z]*"),Validators.minLength(3)],
+      lastName: ['', Validators.required,Validators.pattern("[a-zA-Z]*"),Validators.minLength(3)],
+      birthDate: ['', Validators.required],
+      email: ['', Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+@gmail.com")],
+      password: ['', Validators.required,Validators.minLength(8),Validators.pattern("^[a-zA-Z0-9]{8,}?")],
+      profession: ['', Validators.required],
+      customerCategory: ['Customer', Validators.required],
+
+
+    });*/
+
+
+
+
+
+
+
   }
 
   
